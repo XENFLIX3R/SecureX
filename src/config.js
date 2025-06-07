@@ -19,8 +19,8 @@ export const siteConfig = {
     { href: "#stats", label: "Stats" },
   ],
   stats: [
-    { number: "600K+", label: "Servers Protected" },
-    { number: "12M+", label: "Users Secured" },
+    { number: "16k", label: "Servers Protected" },
+    { number: "128k+", label: "Users Secured" },
     { number: "99.99%", label: "Uptime" },
     { number: "24/7", label: "Dedicated Support" }
   ],
