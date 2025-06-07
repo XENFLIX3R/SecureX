@@ -1,0 +1,146 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%; /* Even darker background */
+    --foreground: 0 0% 98%; /* White foreground */
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --radius: 0.75rem; /* Slightly larger radius for modern feel */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif; /* Modern font */
+  }
+}
+
+.dark-gradient-bg {
+  background: linear-gradient(145deg, #0a0a10 0%, #000000 50%, #0a0a10 100%);
+}
+
+.accent-gradient-text {
+  background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 50%, #b0b0b0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+}
+
+.tech-glass-effect {
+  background: rgba(10, 10, 20, 0.5); /* Darker glass */
+  backdrop-filter: blur(12px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.05);
+}
+
+.hero-floating-animation {
+  animation: heroFloat 8s ease-in-out infinite;
+}
+
+@keyframes heroFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-25px) rotate(2deg);
+  }
+}
+
+/* Removed .white-glow-effect as it's no longer globally applied to logos */
+
+.command-card {
+  background: linear-gradient(135deg, rgba(20, 20, 30, 0.7) 0%, rgba(10, 10, 20, 0.7) 100%);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.command-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.hero-tech-pattern {
+  background-image:
+    radial-gradient(circle at 15% 85%, rgba(255, 255, 255, 0.03) 0%, transparent 30%),
+    radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.04) 0%, transparent 40%),
+    linear-gradient(rgba(255,255,255,0.01) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.01) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 50px 50px, 50px 50px;
+}
+
+.stats-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.06) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+.stats-card:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.08) 100%);
+  transform: translateY(-5px);
+}
+
+.button-primary-glow {
+  background: linear-gradient(45deg, #5f72be, #9673b9);
+  box-shadow: 0 0 10px #7c73b9, 0 0 20px #7c73b9, 0 0 30px #5f72be;
+  transition: all 0.3s ease;
+}
+.button-primary-glow:hover {
+  box-shadow: 0 0 15px #7c73b9, 0 0 30px #7c73b9, 0 0 45px #5f72be;
+  transform: scale(1.05);
+}
+
+.button-outline-white {
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #e0e0e0;
+}
+.button-outline-white:hover {
+  border-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+}
+
+/* Add Inter font from Google Fonts if not already available */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+
+.animated-text-reveal span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: revealText 0.5s forwards;
+}
+
+@keyframes revealText {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.icon-glow {
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+}
